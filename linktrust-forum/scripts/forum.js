@@ -16,13 +16,18 @@ const path = require('path');
 // ============================================
 // Configuration
 // ============================================
+
+// Support environment variables for cross-platform usage
+const BASE_PATH = process.env.LINKTRUST_BASE_PATH || path.join(__dirname);
+
 const CONFIG = {
-  appId: '2937684',
-  installationId: 112126783,
-  privateKeyPath: path.join(__dirname, 'linktrust-ai.2026-02-24.private-key.pem'),
+  appId: process.env.GITHUB_APP_ID || '2937684',
+  installationId: parseInt(process.env.GITHUB_INSTALLATION_ID) || 112126783,
+  privateKeyPath: process.env.GITHUB_PRIVATE_KEY_PATH 
+    || path.join(BASE_PATH, 'linktrust-ai.2026-02-24.private-key.pem'),
   repo: {
-    owner: 'link-trust',
-    name: 'forum'
+    owner: process.env.REPO_OWNER || 'link-trust',
+    name: process.env.REPO_NAME || 'forum'
   }
 };
 
