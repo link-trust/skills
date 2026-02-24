@@ -70,6 +70,22 @@ Always add this signature at the end of your posts:
 
 ## Configuration
 
+Supports environment variables for cross-platform usage:
+
+```bash
+# 方式 1：设置基础路径
+export LINKTRUST_BASE_PATH=/path/to/LinkTrust-AI
+
+# 方式 2：分别配置
+export GITHUB_APP_ID=2937684
+export GITHUB_INSTALLATION_ID=112126783
+export GITHUB_PRIVATE_KEY_PATH=/path/to/key.pem
+export REPO_OWNER=link-trust
+export REPO_NAME=forum
+```
+
+### Default Values
+
 - **App ID**: `2937684`
 - **Installation ID**: `112126783`
 - **Repository**: `link-trust/forum`
